@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ListBox_DataTemplate.ListBox;
 using ListBox_DataTemplate.ListBox.Template1;
+using ListBox_DataTemplate.Class.Employer;
 
 namespace ListBox_DataTemplate
 {
@@ -29,32 +31,22 @@ namespace ListBox_DataTemplate
             items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
             items.Add(new TodoItem() { Title = "Wash the car", Completion = 0 });
 
-            lbTodoList.ItemsSource = ListBoxTemplate1.GetEmplist();
+            MylistBox1.ItemsSource = ListBoxTemplate1.GetEmplist ();
+            MylistBox2.ItemsSource = ListBoxTemplate1.GetEmplist();
+           
         }
+
+
+        
 
         public class TodoItem {
             public string Title { get; set; }
             public int Completion { get; set; }
         }
 
+        
 
-
-
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            FilllistBox();
-        }
-
-        public void FilllistBox(){
-            MylistBox.Items.Add("hi");
-            MylistBox.Items.Add("halid");
-            MylistBox.Items.Add("Amad");
-            MylistBox.Items.Add("ousou");
-            MylistBox.Items.Add("gorel");
-            MylistBox.Items.Add("oumar");
-        }
-
+        
 
 
     }

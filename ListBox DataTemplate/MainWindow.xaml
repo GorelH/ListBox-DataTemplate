@@ -1,29 +1,27 @@
 ﻿<Window x:Class="ListBox_DataTemplate.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="629.545" Width="725" Loaded="Window_Loaded">
-    
+        Title="MainWindow" Height="513.127" Width="1157.836">
+
     <Window.Resources>
 
-
-
-        <DataTemplate x:Key="ListBoxStyle1">
-            <Grid Margin="0,2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="100" />
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding Title}" />
-                <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />
-            </Grid>
-        </DataTemplate>
-
-
+        <DataTemplate x:Key="ListBoxTempX">
+            <Border  Style="{DynamicResource ListBoxBoderStyle}">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Border BorderThickness="1" BorderBrush="Beige" >
+                        <Image Source="{Binding Img}" Stretch="Fill" Width="50" Height="50"/>
+                    </Border>
+                    <StackPanel Margin="10">
+                        <TextBlock Text="{Binding Name}" FontSize="15" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Position}" FontSize="12" FontWeight="Light"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </DataTemplate>       
     </Window.Resources>
-    
+
     <Grid ShowGridLines="True" >
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -31,30 +29,11 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListBox Name="lbTodoList" Height="94" HorizontalContentAlignment="Stretch" Margin="20" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="100" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Title}" />
-                        <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
 
-        <ListBox Name="MylistBox" Height="94"  Width="263" Grid.Column="1" Grid.Row="0"/>
+        <ListBox Name="MylistBox1" Style="{DynamicResource ListBoxStyle}" ItemTemplate="{StaticResource ListBoxTempX}" Margin="10" />
 
-        
-        <ListBox Name="MylistBox3" Height="94"  Width="263" Grid.Column="2" Grid.Row="1">
-            
-        </ListBox>
+        <ListBox Name="MylistBox2" Style="{DynamicResource ListBoxStyle}" ItemTemplate="{DynamicResource ListBoxTempX}" Margin="10" Grid.Column="1"/>
 
-
-        <ListBox Name="MylistBox4" ItemTemplate="{StaticResource ListBoxStyle1}" Height="94"  Width="263" Grid.Column="0" Grid.Row="2"/>
 
     </Grid>
 </Window>
