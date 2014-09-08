@@ -18,7 +18,7 @@
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
                         <Setter Property="Foreground" Value="BlueViolet" />
-                        <Setter Property="OpacityMask" Value="#AA888888"/>
+                        <!--<Setter Property="OpacityMask" Value="#AA888888"/>-->
                     </Trigger>
 
                     <Trigger Property="IsSelected" Value="true">

@@ -8,8 +8,6 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ListBox/Template1/ListBoxTemplate1.xaml" />
-                
-                
             </ResourceDictionary.MergedDictionaries>
             <!-- Other resources if you have -->
         </ResourceDictionary>
